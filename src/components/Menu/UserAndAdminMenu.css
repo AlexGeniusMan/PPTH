@@ -1,0 +1,101 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.classAdminMenu {
+    width: 1200px;
+    min-height: 50px;
+    height: 100%;
+    margin: 0 auto;
+    color: black;
+    /*background: red;*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.classAdminMenuButton {
+    float: left;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    min-height: 100%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background: white;
+    border: 2px solid black;
+    text-decoration: none;
+    color: black;
+    align-self: baseline;
+}
+
+#column-1 {
+    width: 30%;
+    margin-right: 3%;
+}
+
+#column-2 {
+    width: 30%;
+}
+
+#column-31 {
+    width: 30%;
+    margin-left: 3%;
+}
+
+a.selected {
+    color: white;
+    background-color: #D09959;
+
+}
+
+@font-face {
+    font-family: 'House M.D Regular';
+    src: url('./../../house-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*.HeaderStyle {*/
+/*    max-width: 1200px;*/
+/*    margin: auto;*/
+/*    color: #D09959;*/
+/*    font-size: 20px;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*}*/
+
+.adminHeaderText {
+    font-family: 'House M.D Regular', sans-serif;
+}
+
+#userHeader {
+    width: 15%;
+    min-height: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    max-height: 25px;
+    text-decoration: none;
+}
+
+@media (min-width: 992px) and (max-width: 1210px) {
+    .classAdminMenu {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media (max-width: 480px) {
+
+}

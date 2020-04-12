@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'House M.D Regular';
+    src: url('./../../house-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.HeaderStyle {
+    max-width: 1200px;
+    padding-top: 5px;
+    margin: auto;
+    color: #D09959;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.adminHeaderText {
+    font-family: 'House M.D Regular', sans-serif;
+}
+
+.userHeader {
+    background-color: white;
+    width: 15%;
+    min-height: 100%;
+    /*border: 2px solid black;*/
+    border-radius: 2px;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    max-height: 25px;
+    text-decoration: none;
+}
+
+@media (min-width: 992px) and (max-width: 1210px) {
+ .HeaderStyle{
+     padding: 5px;
+ }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media (max-width: 480px) {
+
+}

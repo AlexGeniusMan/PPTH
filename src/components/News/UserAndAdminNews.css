@@ -1,0 +1,166 @@
+.bgPosts {
+    width: 1200px;
+    height: 100%;
+    background: white;
+    /*min-height: 900px;*/
+    /*border: 2px solid black;*/
+    border-radius: 5px;
+    margin: 5px auto 0;
+    background-color: #f2f2f2;
+    padding: 10px 0;
+}
+
+.bgPost {
+    margin: 15px auto;
+    /*min-height: 200px;*/
+    width: 1190px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.columnDate{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(0,0,0,0.3);
+    margin: 0 20px;
+}
+
+.columnNews{
+    box-sizing: border-box;
+    /*padding: 6px 0;*/
+    min-height: 10px;
+    margin: 7px 1%;
+    color: black;
+    border-radius: 5px;
+    background: white;
+    /*border: 2px solid black;*/
+    text-align: start;
+    text-decoration: none;
+}
+
+#column-4 {
+    /*float: left;*/
+    width: 80%;
+    margin-right: 3%;
+    font-weight: 700;
+}
+
+#column-5 {
+    /*float: right;*/
+    width: 10%;
+}
+
+#column-6 {
+    clear:both;
+    margin: 6px 20px;
+    padding: 0 1%;
+
+}
+
+.news {
+    width: 1200px;
+    text-align: center;
+    margin: 0 auto 15px;
+    font-size: 26px;
+
+}
+.newsUpdate {
+    width: 90%;
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+.newsContainer {
+    width: 90%;
+    margin: 0 auto;
+}
+.newsText {
+    box-sizing: border-box;
+    min-height: 50px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+@media (min-width: 992px) and (max-width: 1210px) {
+    .bgPosts, .bgPost, .news{
+        width: 99%;
+    }
+    .bgPosts {
+        margin: 0 auto;
+        padding: 5px 0;
+    }
+    .bgPost {
+        padding-bottom: 1px;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .HeaderStyle {
+        flex-direction: column;
+    }
+    .userHeader {
+        margin: 15px 0 5px;
+        padding: 2px;
+    }
+    .classAdminMenu {
+        width: 100%;
+    }
+    .bgPosts, .bgPost, .news{
+        width: 99%;
+    }
+    .bgPosts {
+        margin: 0 auto;
+        padding: 5px 0;
+    }
+    .bgPost {
+        padding-bottom: 1px;
+    }
+    .columnNews {
+        text-align: start;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .bgPosts {
+        margin: 10px auto 0;
+    }
+    .bgPost {
+        width: 98%;
+    }
+    .userHeader {
+        width:30%;
+    }
+    .classAdminMenu {
+        display: flex;
+        flex-direction: column;
+    }
+    .columnDate {
+        align-items: center;
+    }
+
+    #column-1, #column-2, #column-31 {
+        width: 90%;
+        margin: 3px auto;
+    }
+    #column-4 {
+        width: 70%;
+    }
+    #column-5 {
+        width: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    .userHeader {
+        width: 50%;
+    }
+    .columnNews, .columnDate{
+        font-size: 15px;
+    }
+}
