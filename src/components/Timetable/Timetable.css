@@ -1,17 +1,20 @@
 .week {
-    margin:auto;
     text-align: center;
     font-size: 32px;
+    margin: auto;
     margin-bottom: 10px;
 }
+
 .number {
     color: #45d900;
 }
+
 .day {
     text-align: center;
     font-size: 20px;
     font-weight: 700;
 }
+
 .column {
     list-style: none;
     margin: 10px 15px;
@@ -20,9 +23,11 @@
     background-color: #fff;
     font-weight: 400;
 }
+
 .column li:last-child .row {
     border: none;
 }
+
 .row {
     display: flex;
     flex-direction: row;
@@ -32,9 +37,28 @@
     border-bottom: 2px solid black;
     padding: 5px 10px;
 }
+
 .info {
+    text-align: left;
     font-size: 20px;
+    width: 25%;
 }
+
+.info text {
+    padding-left: 4%;
+}
+
+.lecturer {
+    width: 57%;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lecturer text:first-child {
+    /*padding-right: 4%;*/
+}
+
 #last-row {
     border: none;
 }
@@ -45,30 +69,35 @@
     margin: 5px auto 10px;
     font-size: 32px;
 }
+
 textarea {
     outline: none;
     border: none;
     resize: none;
     overflow-y: hidden;
 }
+
 .timetableUpdate {
     display: flex;
     font-size: 18px;
     justify-content: space-evenly;
     margin: 10px 0;
 }
+
 .timetableAdmin {
     width: 15%;
     border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
 }
-.timetableContent{
+
+.timetableContent {
     width: 75%;
     border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
 }
+
 .timetableUpdateButton {
     font-size: 18px;
     box-sizing: border-box;
@@ -80,6 +109,7 @@ textarea {
     color: black;
     transition: 0.2s ease;
 }
+
 .timetableUpdateButton:hover {
     background-color: #f2f2f2;
 }
@@ -95,25 +125,30 @@ textarea {
     border: 2px solid black;
     transition: 0.2s ease;
 }
+
 .updateButton:hover {
     background-color: #f2f2f2;
 }
 
 
 @media (max-width: 1210px) {
-    .bgPosts, .bgPost, .news{
+    .bgPosts, .bgPost, .news {
         width: 99%;
     }
+
     .bgPosts {
         margin: 0 auto;
         padding: 5px 0;
     }
+
     .bgPost {
         padding-bottom: 1px;
     }
+
     .columnNews {
         text-align: start;
     }
+
     .timetable {
         width: 100%;
     }
@@ -123,9 +158,11 @@ textarea {
     .bgPosts {
         margin: 10px auto 0;
     }
+
     .timetable {
         margin: 5px auto 15px;
     }
+
     .day {
         font-size: 16px;
     }
@@ -135,9 +172,11 @@ textarea {
     .timetable {
         font-size: 22px;
     }
+
     .info {
         font-size: 14px;
     }
+
     .column {
         padding: 0;
         font-size: 14px;

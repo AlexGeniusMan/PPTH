@@ -1,27 +1,20 @@
-import {NavLink} from "react-router-dom";
 import React from 'react';
-import './UserAndAdminNews.css';
+import Post from './Post';
+import './News.css';
 
-const Post = (props) => {
-    return <div className='bgPost'>
-        {/*<NavLink to='/news'>{props.name}</NavLink>*/}
-        <div>
-            <div id='column-4'>{props.header}</div>
-            <div id='column-5'>{props.date}</div>
-        </div>
-        <div>
-            <div id='column-6'>{props.content}</div>
-        </div>
-    </div>
-}
 const UserNews = (props) => {
+    let Posts = []
+    if (props.state.posts_data !== []) {
+        Posts = props.state.posts_data.map(temp => <Post id={temp.id} header={temp.header} date={temp.date}
+                                                         content={temp.content}/>);
+    }
 
-    let Posts = props.PostsData.map(temp => <Post id={temp.id} header={temp.header} date={temp.date}
-                                            content={temp.content}/>);
+    let Posts_Reversed = Posts.reverse()
 
     return (
-        <div className='bgPosts'>
-            {Posts}
+        <div>
+            <h2>News</h2>
+            <div>{Posts_Reversed}</div>
         </div>
     )
 }

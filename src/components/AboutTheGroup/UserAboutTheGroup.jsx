@@ -1,76 +1,109 @@
+import {rerenderEntireTree} from "../../render";
+import image_1 from "../../redux/Images/1.jpg";
+import image_2 from "../../redux/Images/2.jpg";
+import image_3 from "../../redux/Images/3.jpg";
+import image_4 from "../../redux/Images/4.jpg";
+import image_5 from "../../redux/Images/5.jpg";
+import image_6 from "../../redux/Images/6.jpg";
+import state from "../../redux/state";
+import './AboutTheGroup.css';
 import React from 'react';
-import './UserAndAdminAboutTheGroup.css';
-import state, {updateAboutDesc, updateAboutName} from "../../redux/state";
+import User from './User'
 
+let realAdminCode = "888"
 
-const User = (props) => {
-    return <div>
-        <div className="group-mate">
-            <div className="pos">{props.id}</div>
-            <div className="photo">
-                <img src={props.image} alt="profile-photo" vspace="0"/>
-            </div>
-            <div className="profile">
-                <div className="profile-name">{props.name}</div>
-                <div className="profile-text">{props.desc}</div>
-            </div>
-        </div>
-    </div>
+let stateAbout = {
+    realAdminCode: 888,
+    AboutData: [
+        {
+            id: 1,
+            name: 'Gregory House',
+            image: image_1,
+            desc: '"It’s a basic truth of the human condition that everybody lies. The only variable is about what."'
+        },
+        {
+            id: 2,
+            name: 'Lisa Cuddy',
+            image: image_2,
+            desc: '"When things go run, I don\'t wanna hope I\'m not alone, I wanna know it."'
+        },
+        {
+            id: 3,
+            name: 'James Wilson',
+            image: image_3,
+            desc: '"My watch must have stopped. Must be a quarter to never."'
+        },
+        {
+            id: 4,
+            name: 'Eric Foreman',
+            image: image_4,
+            desc: '"I\'d stand outside your apartment all night and hold a boom box, except you told me you hate 80\'s music."'
+        },
+        {
+            id: 5,
+            name: 'Allison Cameron',
+            image: image_5,
+            desc: '"We need to get away from Princeton-Plainsboro."'
+        },
+        {
+            id: 6,
+            name: 'Robert Chase',
+            image: image_6,
+            desc: '"Getting knifed doesn\'t get me an extension?"'
+        }
+    ]
 }
 
 
+
+export let updateAboutName = (AdminCode4Name, newNameId, newName) => {
+    if (AdminCode4Name === realAdminCode) {
+        if (Number(newNameId) > 0 && Number(newNameId) < 7) {
+            let Id = String(+newNameId - 1)
+            debugger
+            stateAbout.AboutData[Id].name = newName
+
+            rerenderEntireTree(state)
+        } else {
+            alert('False id!')
+        }
+    } else {
+        alert('False AdminCode!')
+    }
+}
+
+export let updateAboutDesc = (AdminCode4Desc, newDescId, newDesc) => {
+    if (AdminCode4Desc === realAdminCode) {
+        if (Number(newDescId) > 0 && Number(newDescId) < 7) {
+            let Id = String(+newDescId - 1)
+            stateAbout.AboutData[Id].desc = newDesc
+
+            rerenderEntireTree(state)
+        } else {
+            alert('False id!')
+        }
+    } else {
+        alert('False AdminCode!')
+    }
+}
+
 const UserAboutTheGroup = (props) => {
 
-    let newNameId = React.createRef()
-    let newName = React.createRef()
-    let newDescId = React.createRef()
-    let newDesc = React.createRef()
-    let AdminCode4Desc = React.createRef()
-    let AdminCode4Name = React.createRef()
-
-    let updateName = () => {
-        updateAboutName(AdminCode4Name.current.value, newNameId.current.value, newName.current.value)
-        if(AdminCode4Name.current.value == state.realAdminCode) {
-            newNameId.current.value = ''
-            newName.current.value = ''
-        }
-    }
-    let updateDesc = () => {
-        updateAboutDesc(AdminCode4Desc.current.value, newDescId.current.value, newDesc.current.value)
-        if(AdminCode4Desc.current.value == state.realAdminCode) {
-            newDescId.current.value = ''
-            newDesc.current.value = ''
-        }
-    }
-
-    let Users = state.AboutData.map(temp => <User id={temp.id} name={temp.name} image={temp.image} desc={temp.desc}/>);
+    let Users = stateAbout.AboutData.map(temp => <User id={temp.id} name={temp.name} image={temp.image}
+                                                       desc={temp.desc}/>);
 
     return (
         <div className='bgPosts'>
 
-            {/*<div>*/}
-            {/*<textarea className="info" name="class" id="" cols="15" rows="1"*/}
-            {/*          ref={AdminCode4Name} placeholder="Id?">888</textarea>*/}
-            {/*<textarea className="info" name="class" id="" cols="15" rows="1"*/}
-            {/*          ref={newNameId} placeholder="Id?">2</textarea>*/}
-            {/*<textarea className="info" name="class" id="" cols="15" rows="1"*/}
-            {/*          ref={newName} placeholder="New name?">123</textarea>*/}
-            {/*<button onClick={updateName}>Update it!</button>*/}
-            {/*</div>*/}
-
-            {/*<div>*/}
-            {/*<textarea className="info" name="class" id="" cols="15" rows="1"*/}
-            {/*          ref={AdminCode4Desc} placeholder="Id?">888</textarea>*/}
-            {/*<textarea className="info" name="class" id="" cols="15" rows="1"*/}
-            {/*          ref={newDescId} placeholder="Id?">2</textarea>*/}
-            {/*<textarea className="info" name="class" id="" cols="15" rows="1"*/}
-            {/*          ref={newDesc} placeholder="New name?">123</textarea>*/}
-            {/*<button onClick={updateDesc}>Update it!</button>*/}
-            {/*</div>*/}
-
-            <h2>О нас</h2>
-            <div className="information">Информация</div>
+            <h2>About us</h2>
+            <div className="information">Princeton-Plainsboro Teaching Hospital (or PPTH) is the fictitious teaching
+                hospital where House is set. It is located in Princeton, New Jersey on Prospect Street (as seen on
+                Chase's GPS when he rushes to the hospital in After Hours) The hospital presumably is located near the
+                neighboring township of Plainsboro. Princeton University's Frist Campus Center is used in the aerial
+                screen shots. It was apparently based on a hospital near where series co-creator Bryan Singer grew up.
+            </div>
             {Users}
+
         </div>
     )
 }

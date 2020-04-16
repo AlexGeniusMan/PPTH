@@ -10,7 +10,6 @@ body, html {
     height: 100%;
     margin: 0 auto;
     color: black;
-    /*background: red;*/
     display: flex;
     justify-content: space-between;
 }
@@ -56,16 +55,6 @@ a.selected {
     font-style: normal;
 }
 
-/*.HeaderStyle {*/
-/*    max-width: 1200px;*/
-/*    margin: auto;*/
-/*    color: #D09959;*/
-/*    font-size: 20px;*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*}*/
-
 .adminHeaderText {
     font-family: 'House M.D Regular', sans-serif;
 }
@@ -82,7 +71,7 @@ a.selected {
     text-decoration: none;
 }
 
-@media (min-width: 992px) and (max-width: 1210px) {
+@media (max-width: 1210px) {
     .classAdminMenu {
         width: 100%;
     }
@@ -92,7 +81,11 @@ a.selected {
 
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (max-width: 767px) {
+    #column-1, #column-2, #column-31 {
+        width: 90%;
+        margin: 3px auto;
+    }
 
 }
 

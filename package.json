@@ -1,6 +1,6 @@
 {
-  "name": "tako-19",
-  "version": "0.1.0",
+  "name": "ppth_1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",
@@ -23,5 +23,18 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexGeniusMan/PPTH.git"
+  },
+  "author": "AlexGeniusMan alexgeniusman@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexGeniusMan/PPTH/issues"
+  },
+  "homepage": "https://github.com/AlexGeniusMan/PPTH#readme",
+  "description": ""
 }

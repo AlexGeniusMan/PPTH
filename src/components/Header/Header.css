@@ -24,7 +24,6 @@
     background-color: white;
     width: 15%;
     min-height: 100%;
-    /*border: 2px solid black;*/
     border-radius: 2px;
     text-align: center;
     color: black;
@@ -34,19 +33,26 @@
 }
 
 @media (min-width: 992px) and (max-width: 1210px) {
- .HeaderStyle{
-     padding: 5px;
- }
+    .HeaderStyle {
+        padding: 5px;
+    }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-
+@media (max-width: 991px) {
+    .userHeader {
+        margin: 15px 0 5px;
+        padding: 2px;
+    }
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
-
+@media (max-width: 767px) {
+    .userHeader {
+        width: 30%;
+    }
 }
 
 @media (max-width: 480px) {
-
+    .userHeader {
+        width: 50%;
+    }
 }

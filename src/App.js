@@ -1,5 +1,6 @@
+import state, {addPost, deletePost} from "./redux/state";
 import {BrowserRouter, Route} from "react-router-dom";
-import {addPost} from "./redux/state";
+import './components/News/News.css'
 import React from 'react';
 import './App.css';
 
@@ -19,7 +20,6 @@ import UserAboutTheGroup from "./components/AboutTheGroup/UserAboutTheGroup";
 import AdminAboutTheGroup from "./components/AboutTheGroup/AdminAboutTheGroup";
 
 const App = (props) => {
-
     return (
         <BrowserRouter>
             <div className="App">
@@ -60,36 +60,57 @@ const App = (props) => {
                 <Route exact path='/admin-about-the-group'
                        render={() => <AdminMenu/>}/>
                 {/*-----------------------------------------------*/}
-                <div className='AppStyle'>
-                    <Route exact path='/news'
-                           render={() => <UserNews
-                               PostsData={props.StateData.PostsData}/>}/>
+                <Route exact path='/news'
+                       render={() => (
+                           <div className="bgPosts">
+                               <UserNews state={props.state}/>
+                           </div>
+                       )}/>
 
-                    <Route exact path='/timetable'
-                           render={() => <UserTimetable/>}/>
+                <Route exact path='/admin-news'
+                       render={() => (
+                           <div className="bgPosts">
+                               <AdminNews deletePost={deletePost} addPost={addPost} state={props.state}/>
+                               <UserNews state={props.state}/>
+                           </div>
+                       )}/>
+                {/*-----------------------------------------------*/}
+                <Route exact path='/timetable'
+                       render={() => (
+                           <div className="bgPosts">
+                               <UserTimetable state={state}/>
+                           </div>
+                       )}/>
 
-                    <Route exact path='/about-the-group'
-                           render={() => <UserAboutTheGroup/>}/>
-                </div>
+                <Route exact path='/admin-timetable'
+                       render={() => (
+                           <div className="bgPosts">
+                               <AdminTimetable/>
+                               <UserTimetable state={state}/>
+                           </div>
+                       )}/>
+                {/*-----------------------------------------------*/}
+                <Route exact path='/about-the-group'
+                       render={() => (
+                           <div className="bgPosts">
+                               <UserAboutTheGroup/>
+                           </div>
+                       )}/>
 
-                <div className='AppStyle'>
-                    <Route exact path='/admin-news'
-                           render={() => <AdminNews
-                               addPost={addPost}
-                               PostsData={props.StateData.PostsData}/>}/>
-
-                    <Route exact path='/admin-timetable'
-                           render={() => <AdminTimetable/>}/>
-
-                    <Route exact path='/admin-about-the-group'
-                           render={() => <AdminAboutTheGroup/>}/>
-                </div>
-
+                <Route exact path='/admin-about-the-group'
+                       render={() => (
+                           <div className="bgPosts">
+                               <AdminAboutTheGroup/>
+                               <UserAboutTheGroup/>
+                           </div>
+                       )}/>
+                {/*-----------------------------------------------*/}
                 {/*<Route exact path='/'*/}
                 {/*       render={() => <div>*/}
-                {/*           <text className='LETTER'>H</text>*/}
+                {/*           <text className='LETTER'>H</text>                        DO NOT DELETE                 */}
                 {/*       </div>}/>*/}
                 {/*-----------------------------------------------*/}
+
             </div>
         </BrowserRouter>)
 }

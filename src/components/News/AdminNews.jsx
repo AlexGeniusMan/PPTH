@@ -1,48 +1,47 @@
 import React from 'react';
-import './UserAndAdminNews.css';
-import state from './../../redux/state'
+import './News.css';
 
-const Post = (props) => {
-    return <div className='bgPost'>
-        <div className='columnDate'>
-            <div className='columnNews' id='column-4'>{props.header}</div>
-            <div className='columnNews' id='column-5'>{props.date}</div>
-        </div>
-        <div>
-            <div className='columnNews' id='column-6'>{props.content}</div>
-        </div>
-    </div>
-}
+let realAdminCode = "888"
+
 const AdminNews = (props) => {
 
     let newPostHeader = React.createRef();
     let newPostContent = React.createRef();
-    let AdminCode = React.createRef();
+    let newPostAdminCode = React.createRef();
 
-    let addPost = () => {
+    let addNewPost = () => {
         let tempContent = newPostContent.current.value;
         let tempHeader = newPostHeader.current.value;
-        props.addPost(AdminCode.current.value, tempHeader, tempContent)
-        if (AdminCode.current.value == state.realAdminCode) {
+        let tempAdminCode = newPostAdminCode.current.value
+        props.addPost(tempAdminCode, tempHeader, tempContent)
+        if (tempAdminCode === realAdminCode) {
             newPostContent.current.value = ''
             newPostHeader.current.value = ''
         }
     }
 
-    let Posts = props.PostsData.map(temp => <Post id={temp.id} header={temp.header} date={temp.date}
-                                                  content={temp.content}/>);
+    let deletePostId = React.createRef();
+    let deletePostAdminCode = React.createRef();
+
+    let deleteOldPost = () => {
+        let deletePostAdminCodeTemp = deletePostAdminCode.current.value;
+        let deletePostIdTemp = deletePostId.current.value;
+        props.deletePost(deletePostAdminCodeTemp, deletePostIdTemp)
+        if (deletePostAdminCodeTemp === realAdminCode) {
+            deletePostId.current.value = ''
+        }
+    }
 
     return (
-
-
-        <div className='bgPosts'>
+        <div>
             <div className='bgPost'>
                 <div className="news">
-                    There you can add new post
+                    Add new post:
                     <div className="newsUpdate">
-                        <textarea ref={AdminCode}
+                        <textarea ref={newPostAdminCode}
                                   placeholder="Admin code?"
-                                  name="" id="" cols="" rows="1" className="timetableAdmin">888</textarea>
+                                  name="" id="" cols="" rows="1"
+                                  className="timetableAdmin"></textarea>
                         <textarea ref={newPostHeader}
                                   placeholder="Header"
                                   name="" id="" cols="" rows="1"
@@ -53,35 +52,31 @@ const AdminNews = (props) => {
                                   placeholder="Content"
                                   name="" id="" cols="" rows="1" className="newsText"/>
                     </div>
-                    <button className="updateButton" onClick={addPost}>Add post</button>
+                    <button className="updateButton" onClick={addNewPost}>Add post</button>
+
+
                 </div>
+
             </div>
 
-            {/*<div>*/}
-            {/*    <textarea ref={AdminCode}>888</textarea>*/}
-            {/*    <textarea ref={newPostHeader}>Header</textarea>*/}
-            {/*    <textarea ref={newPostContent}>Content</textarea>*/}
-            {/*    <button className="updateButton" onClick={addPost}>Add</button>*/}
-            {/*</div>*/}
-
-            {/*<div className='bgPost'>*/}
-            {/*    <div className="update">*/}
-            {/*        <div className="updateText">*/}
-            {/*            Change description*/}
-            {/*        </div>*/}
-            {/*        <div className="updateChange">*/}
-            {/*            <textarea name="" cols="9" rows="1" placeholder='Admin Code'></textarea>*/}
-            {/*            <textarea name="" cols="3" rows="1" placeholder='Id'></textarea>*/}
-            {/*            <textarea name="" cols="10" rows="1" className="updateName"*/}
-            {/*                      placeholder='New description'></textarea>*/}
-            {/*        </div>*/}
-            {/*        <a href="#" className="updateButton">Update</a>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-
-            {Posts}
+            <div className='bgPost'>
+                <div className="update">
+                    <div className="updateText">
+                        Delete post:
+                    </div>
+                    <div className="updateChange">
+                        <textarea ref={deletePostAdminCode} placeholder="Admin code" name="" cols="9"
+                                  rows="1"></textarea>
+                        <textarea ref={deletePostId} placeholder="Id?" name="" cols="4" rows="1"></textarea>
+                    </div>
+                    <button className="updateButton" onClick={deleteOldPost}>Delete</button>
+                </div>
+            </div>
         </div>
+
+
     )
+
 }
 
 export default AdminNews;

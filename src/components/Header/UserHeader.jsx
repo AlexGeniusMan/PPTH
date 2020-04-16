@@ -1,6 +1,6 @@
-import React from 'react';
-import './UserAndAdminHeader.css';
 import {NavLink} from "react-router-dom";
+import React from 'react';
+import './Header.css';
 
 const AdminHeader = () => {
     return (
@@ -8,7 +8,7 @@ const AdminHeader = () => {
             <div className='adminHeaderText'>
                 Princeton-Plainsboro Teaching Hospital
             </div>
-                <NavLink to='/admin' className='userHeader'>Go to Admin's Panel</NavLink>
+            <NavLink to='/admin-news' className='userHeader'>Go to Admin's Panel</NavLink>
         </div>
     )
 }
