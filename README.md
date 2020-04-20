@@ -5,6 +5,8 @@ It enables your study group to view news, current timetable and group informatio
 
 >The style of this project is similar to the styles of one famous series and one famous media source.
 
+>[Figma prototype](https://www.figma.com/file/Jhjul7FHisjLiuCj9Jr4NF/PPTH?node-id=0%3A1)
+
 
 #### To get started:
 Install [Node.js](https://nodejs.org/).
