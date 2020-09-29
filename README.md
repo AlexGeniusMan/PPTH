@@ -19,8 +19,8 @@ json-server --watch db.json
 
 Then start the project (localhost:3001):
 ```
-git clone https://github.com/AlexGeniusMan/PPTH.git
-cd PPTH
+git clone https://github.com/AlexGeniusMan/Princeton-Plainsboro-Teaching-Hospital.git
+cd Princeton-Plainsboro-Teaching-Hospital
 npm install
 npm start
 ```
