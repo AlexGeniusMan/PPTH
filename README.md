@@ -1,6 +1,6 @@
-# PPTH
+# Princeton-Plainsboro Teaching Hospital
 
-#### PPTH is an open-source project for [RTUITLab](https://vk.com/rtuitlab).
+#### Princeton-Plainsboro Teaching Hospital is an open-source project for [RTUITLab](https://vk.com/rtuitlab).
 It enables your study group to view news, current timetable and group information.
 
 >The style of this project is similar to the styles of one famous series and one famous media source.
