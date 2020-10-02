@@ -1,4 +1,4 @@
-# Princeton-Plainsboro Teaching Hospital
+# Princeton-Plainsboro Teaching Hospital [React.js]
 
 #### Princeton-Plainsboro Teaching Hospital is an open-source project for [RTUITLab](https://vk.com/rtuitlab).
 It enables your study group to view news, current timetable and group information.
